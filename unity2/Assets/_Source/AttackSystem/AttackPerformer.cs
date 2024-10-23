@@ -1,5 +1,6 @@
 using Core;
 using UnityEngine;
+using System;
 
 namespace AttackSystem
 {
@@ -7,6 +8,7 @@ namespace AttackSystem
     {
         private IAttackStrategy _attackStrategy;
         private Animator _animator;
+        public static Action IsAttacking;
 
         public AttackPerformer(Animator animator)
         {
@@ -21,6 +23,7 @@ namespace AttackSystem
         public void PerformAttack()
         {
             _attackStrategy.Attack(_animator);
+            IsAttacking?.Invoke();
         }
     }
 }

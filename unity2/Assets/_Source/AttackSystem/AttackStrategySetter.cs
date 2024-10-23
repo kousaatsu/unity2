@@ -3,6 +3,7 @@ using Core;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using EnemySystem;
 
 namespace AttackSystem
 {
@@ -13,10 +14,12 @@ namespace AttackSystem
         private AttackPerformer _attackPerformer;
         private Button _chosenButton;
         private ColorBlock _defaultButtonColors;
+        private EnemySetter _setter;
 
-        public void Construct(AttackPerformer attackPerformer)
+        public void Construct(AttackPerformer attackPerformer, EnemySetter enemySetter)
         {
             _attackPerformer = attackPerformer;
+            _setter = enemySetter;
         }
 
         private void Start()
