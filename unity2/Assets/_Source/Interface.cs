@@ -1,15 +1,21 @@
 using System;
 
-namespace abstractver
+namespace interfacever
 {
 
-    public abstract class ATetragon
+    public interface ITetragon
+    {
+        float CountPerimeter();
+        float CountArea();
+    }
+
+    public class Tetragon : ITetragon
     {
         protected float a;
         protected float b;
         protected float angle;
 
-        public ATetragon(float a, float b, float angle)
+        public Tetragon(float a, float b, float angle)
         {
             this.a = a;
             this.b = b;
@@ -27,7 +33,7 @@ namespace abstractver
         }
     }
 
-    public class Quadrilateral : ATetragon
+    public class Quadrilateral : Tetragon
     {
         public Quadrilateral(float a, float b, float angle) : base(a, b, angle) { }
 
@@ -65,10 +71,7 @@ namespace abstractver
 
     public class Rhombus : Parallelogram
     {
-        public Rhombus(float side) : base(side, side, 60) // угол 60 градусов для примера
-        {
-            a = side; b = side; angle = 60;
-        }
+        public Rhombus(float side) : base(side, side, 60) { }
 
         public override string ToString()
         {
@@ -100,7 +103,7 @@ namespace abstractver
     {
         static void Main(string[] args)
         {
-            ATetragon[] shapes = new ATetragon[]
+            ITetragon[] shapes = new ITetragon[]
             {
                 new Quadrilateral(4, 5, 60),
                 new ConvexQuadrilateral(3, 4, 75),
