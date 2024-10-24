@@ -65,7 +65,7 @@ namespace abstractver
 
     public class Rhombus : Parallelogram
     {
-        public Rhombus(float side) : base(side, side, 60) // угол 60 градусов для примера
+        public Rhombus(float side) : base(side, side, 60)
         {
             a = side; b = side; angle = 60;
         }
