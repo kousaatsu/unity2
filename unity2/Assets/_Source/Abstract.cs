@@ -13,14 +13,14 @@ public abstract class ATetragon
         this.angle = angle;
     }
 
-    public abstract float CountPerimeter()
+    public virtual float CountPerimeter()
     {
         return 2 * (a + b);
     }
 
-    public abstract float CountArea()
+    public virtual float CountArea()
     {
-        return a * b * (float)Math.Sin(angle * Math.PI / 180);
+        return a * b / 2 * (float)Math.Sin(angle);
     }
 }
 
